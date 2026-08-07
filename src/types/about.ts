@@ -3,3 +3,8 @@ export type Tag = {
     title: string,
     description?: string,
 }
+
+export type MindMapEdge = {
+    source: number,
+    target: number,
+}

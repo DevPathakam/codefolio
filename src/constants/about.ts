@@ -8,7 +8,7 @@ export const tags: Tag[] = [
     },
     {
         id: 2,
-        title: "Panpsychism",
+        title: "Panpsychist",
         description: ""
     },
     {
@@ -46,13 +46,4 @@ export const tags: Tag[] = [
         title: "Scientific",
         description: ""
     },
-
-
-
-
-
-
-
-
-
 ]

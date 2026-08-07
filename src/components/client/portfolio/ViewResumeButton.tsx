@@ -37,7 +37,7 @@ export const ViewResumeButton = () => {
         className="flex gap-1 hover:bg-brand-primary-highlight hover:cursor-pointer p-1"
       >
         <Icon icon="material-symbols:download" className="hidden md:block text-[18px]" />
-        <span>View Resume</span>
+        <span>Download Resume</span>
       </button>
     </>
   );
