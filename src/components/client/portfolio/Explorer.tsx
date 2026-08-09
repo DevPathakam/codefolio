@@ -22,7 +22,7 @@ export const Explorer = () => {
     );
     const list: FakeFile[] = [
       {
-        href: `/portfolio/skills/`,
+        href: `/skills/`,
         fileName: "all",
         type: "JSON",
         isActive: false,
@@ -31,7 +31,7 @@ export const Explorer = () => {
       ...skillCategories.map(
         (category) =>
           ({
-            href: `/portfolio/skills/${category}`,
+            href: `/skills/${category}`,
             fileName: category,
             type: "JSON",
             belongsTo: "skills",
@@ -46,7 +46,7 @@ export const Explorer = () => {
   const getProjectDescendants = () => {
     const list: FakeFile[] = [
       {
-        href: `/portfolio/projects/`,
+        href: `/projects/`,
         fileName: "all",
         type: "Markdown",
         belongsTo: "projects",
@@ -55,7 +55,7 @@ export const Explorer = () => {
       ...Projects.map(
         (project) =>
           ({
-            href: `/portfolio/projects/${project.alias}`,
+            href: `/projects/${project.alias}`,
             fileName: project.alias,
             type: "Markdown",
             belongsTo: "projects",
@@ -92,7 +92,7 @@ export const Explorer = () => {
 
               <Link
                 key={`explorer-descendant-page-hello-user`}
-                href={"/portfolio"}
+                href={"/"}
                 className="hover:bg-brand-primary-highlight flex gap-2"
               >
                 <Icon icon="devicon:react" className="text-sm mt-1" />

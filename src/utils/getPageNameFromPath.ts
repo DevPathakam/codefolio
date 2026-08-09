@@ -7,13 +7,5 @@ export function getPageNameFromPath(pathname: string): PageName {
     return "home";
   }
 
-  if (normalized.startsWith("/about")) {
-    return "about";
-  }
-
-  if (normalized.startsWith("/portfolio")) {
-    return "portfolio";
-  }
-
   return "home";
 }

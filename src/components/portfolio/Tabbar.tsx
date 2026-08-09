@@ -21,7 +21,7 @@ export const Tabbar = () => {
     if (currentFile) {
       router.push(currentFile.href);
     } else {
-      router.push("/portfolio");
+      router.push("/");
     }
   }, [currentFile, router]);
 

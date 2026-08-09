@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppHeader } from "@/components/portfolio/AppHeader";
 import { NavigationListener } from "@/components/NavigationListener";
+import { VerticalMarquee } from "@/components/client/VerticalMarquee";
+import { ScrollbarClasses, Skills } from "@/constants/portfolio";
+import { Icon } from "@iconify/react";
+import { Explorer } from "@/components/portfolio/Explorer";
+import { Tabbar } from "@/components/portfolio/Tabbar";
+import { PortfolioFooter } from "@/components/portfolio/PortfolioFooter";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +19,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -32,8 +44,39 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <div className="h-screen w-screen overflow-hidden">
           <NavigationListener />
+
           <AppHeader />
-          {children}
+          <div
+            className={`flex flex-col h-screen w-screen overflow-hidden bg-brand-primary font-mono pb-16 ${jetBrainsMono.variable}`}
+          >
+            <div className="flex flex-1 w-full overflow-hidden">
+              <aside className="hidden md:block bg-brand-primary-dark border-r border-r-brand-border">
+                <VerticalMarquee className="px-3 flex flex-col gap-6  ">
+                  {Skills.map(
+                    (skill, idx) =>
+                      skill.isFeatured && (
+                        <Icon
+                          key={`sidebar-skill-${idx}`}
+                          icon={skill.icon ?? ""}
+                          className="text-3xl"
+                        />
+                      ),
+                  )}
+                </VerticalMarquee>
+              </aside>
+
+              <Explorer />
+
+              <main className="flex-1 h-full flex flex-col overflow-hidden">
+                <Tabbar />
+
+                <div className={`flex-1 overflow-y-auto ${ScrollbarClasses}`}>
+                  {children}
+                </div>
+              </main>
+            </div>
+          </div>
+          <PortfolioFooter />
         </div>
       </body>
     </html>
