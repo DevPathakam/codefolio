@@ -7,7 +7,7 @@ import { usePortfolioStore } from "@/stores/portfolioStore";
 import { Icon } from "@iconify/react";
 
 export const Tabbar = () => {
-  const activeTabClasses = "border-b border-b-brand-secondary bg-brand-primary";
+  const activeTabClasses = "border-t border-t-brand-secondary bg-brand-primary";
   const inactiveTabClasses = "bg-brand-primary-dark";
 
   const router = useRouter();

@@ -11,10 +11,10 @@ export const NpmPill = ({
   labelClasses,
   valueClasses,
 }: NpmPillProps) => (
-  <small>
-    <span className={`bg-brand-border p-1 rounded-l-lg ${labelClasses}`}>
+  <small className="text-shadow-sm font-medium font-mono">
+    <span className={`bg-[#5D5D5D] py-0.5 px-1 rounded-l-sm ${labelClasses}`}>
       {label}
     </span>
-    <span className={`p-1 font-bold rounded-r-lg ${valueClasses}`}>{value}</span>
+    <span className={`py-0.5 px-1 rounded-r-sm ${valueClasses}`}>{value}</span>
   </small>
 );

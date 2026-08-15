@@ -9,6 +9,13 @@ import { findCompanyByAlias, getTechStack } from "@/utils/portfolio";
 
 export const SocialLinks: SocialLink[] = [
   {
+    href: "mailto:amanpathak.devwork@gmail.com",
+    name: "email",
+    icon: "material-symbols:mail",
+    text: "amanpathak.devwork@gmail.com",
+    visible: true,
+  },
+  {
     href: "#",
     name: "whatsapp",
     icon: "logos:whatsapp-icon",
@@ -428,7 +435,7 @@ export const Projects: Project[] = [
     name: "Templato",
     alias: "templato",
     highlight: 'A dynamic form generation platform that let user select fields and custom components and create a complex form template to be distributed.',
-    points: ["Point 1", "Point 2"],
+    points: ["Built custom AngularJS directives and controllers to dynamically render multi-form templates based on JSON configurations.", "Implemented $scope data-binding and client-side form validation to handle complex user inputs cleanly across dynamic views.", "Integrated backend API services to fetch template definitions and persist multi-form submissions."],
     company: findCompanyByAlias("redsoft"),
     isPersonal: false,
     techStack: getTechStack(["angularjs", "js", "html", "css", "bootstrap"]),
@@ -439,7 +446,7 @@ export const Projects: Project[] = [
     name: "MovieRanker",
     alias: "movie_ranker",
     highlight: "MovieRanker is a dynamic, database-driven platform designed for film enthusiasts to discover, track, and rank cinema through a real-time community engagement algorithm. The application features responsive UI components and interactive dashboards, offering a scalable solution for managing streaming and theater releases.",
-    points: ["Point 1", "Point 2"],
+    points: ["Architected reusable Angular components and services, improving code maintainability across the application.", "Designed responsive UI layouts utilizing Bootstrap's grid system to ensure cross-device compatibility.", "Integrated RESTful backend API endpoints to dynamically render movie data and user rankings.", "Shifted legacy AngularJS frontend architecture to a component-based structure, streamlining client-side data flow."],
     company: findCompanyByAlias("wo"),
     isPersonal: false,
     techStack: getTechStack(["angular", "js", "html", "css", "bootstrap"]),
@@ -451,7 +458,7 @@ export const Projects: Project[] = [
     name: "ParcelPort",
     alias: "parcel_port",
     highlight: "An innovative corporate web solution designed to showcase B2B smart locker technology across residential, commercial, and retail logistics sectors. Built as a high-density operational portal, it details secure hardware infrastructure, responsive API integrations for courier-agnostic drop-offs, and strategic workflow solutions for retail returns and BOPIS (Buy Online, Pick Up In Store) logistics.",
-    points: ["Point 1", "Point 2"],
+    points: ["Developed and maintained multiple software applications for a smart parcel locker system, successfully implementing secure, password-authenticated door-automation logic.", "Delivered production-grade Angular components for a Smart Locker Management System,emphasizing maintainability and modularity.", "Developed and deployed AWS Lambda functions to facilitate real-time data exchange across microservices, improving system scalability and reliability."],
     company: findCompanyByAlias("wo"),
     isPersonal: false,
     techStack: getTechStack([
@@ -471,7 +478,7 @@ export const Projects: Project[] = [
     name: "ItsKeedi",
     alias: "its_keedi",
     highlight: "Itskeedi is brainchild to promote local business. It empowers vendors and its customer to transact with more benefits passed-on to them. It is a unique platform to enable local sellers to reach out to buyers with the best offers and services. With this platform we hope to strengthen local trade with buyers can buy the best available products locally. This e-commerce model can transform local trade practices with digital adoption.",
-    points: ["Point 1", "Point 2"],
+    points: ["Accelerated development timelines by 20% through the creation of compliant, accessible web components while simultaneously designing modular Node.js API routes and MongoDB schemas to ensure scalable backend solutions as a full-stack developer.", "Built scalable backend APIs and data models using Node.js and MongoDB, enabling efficient feature rollouts"],
     company: findCompanyByAlias("shukul"),
     isPersonal: false,
     techStack: getTechStack([
@@ -485,24 +492,6 @@ export const Projects: Project[] = [
     ]),
     duration: '4 months',
     isVisible: true,
-  },
-  {
-    name: "WingsTrack",
-    alias: "wings_track",
-    highlight: "Wings Track is a real-time family safety and geolocation mobile application designed to securely connect family circles through advanced tracking logistics. The platform leverages GPS tracking technology to deliver live location mapping, precise seven-day historical route timelines, and instant geofencing alerts for customized safe zones.",
-    points: ["Point 1", "Point 2"],
-    company: findCompanyByAlias("lw"),
-    isPersonal: false,
-    techStack: getTechStack([
-      "angular",
-      "js",
-      "bootstrap",
-      "node",
-      "express",
-      "sql",
-    ]),
-    duration: '1 year',
-    isVisible: false,
   },
   {
     name: "Levrx",
@@ -519,7 +508,7 @@ export const Projects: Project[] = [
   {
     name: "SysGenie",
     alias: "sys_genie",
-    points: ["Point 1", "Point 2"],
+    points: [],
     isPersonal: true,
     techStack: getTechStack([
       "react",
@@ -535,10 +524,10 @@ export const Projects: Project[] = [
   {
     name: "Personal Branding Site",
     alias: "personal_site",
-    points: ["Point 1", "Point 2"],
+    points: [],
     isPersonal: true,
     techStack: getTechStack(["react", "next", "tailwind", "zustand", "motion"]),
-    duration: '1 week',
+    duration: '1 month',
     isVisible: true,
   },
 ];
