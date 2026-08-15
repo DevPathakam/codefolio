@@ -35,7 +35,7 @@ export const IntroCardTitle = () => {
         setTimeout(() => {
           const eraseControls = animate(count, 0, {
             type: "tween",
-            duration: erasingSpeed, 
+            duration: erasingSpeed,
             ease: "linear",
             onComplete: () => {
               // Move to the next phrase and loop back around
@@ -50,8 +50,13 @@ export const IntroCardTitle = () => {
     return () => controls.stop();
   }, [count, currentPhraseIndex, phrases]);
 
+  const textboxStyles =
+    "border rounded-2xl border-brand-border w-70 md:w-100 p-2 bg-brand-primary-deep-dark";
+
   return (
-    <h2 className="text-xl md:text-4xl font-bold text-brand-secondary">
+    <h2
+      className={`text-xl md:text-3xl text-brand-secondary font-mono ${textboxStyles} mt-2`}
+    >
       <motion.span>{displayText}</motion.span>
       <motion.span
         animate={{ opacity: [1, 0, 1] }}

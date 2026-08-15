@@ -1,25 +1,24 @@
-import Image from "next/image";
-import PopArt from "../assets/PopArt.png";
-import BgImg from "../assets/BgImg.png";
-import { BouncingElement } from "@/components/client/BouncingElement";
-import Link from "next/link";
-// import NoBg from "../assets/no bg.png";
-//import YellowBg from "../assets/yellow bg.jpg";
+import { IntroCardTitle } from "@/components/client/portfolio/IntroCardTitle";
+import { RecentlyOpened } from "@/components/client/RecentlyOpened";
+import { ConnectionLinks } from "@/components/ConnectionLinks";
+import { StartLinks } from "@/components/StartLinks";
 
 export default function HomePage() {
   return (
     <main className="relative w-full h-screen overflow-hidden">
-      <div
-        className="flex flex-col flex-1 items-center justify-center relative z-10 h-screen"
-        style={{ backgroundColor: "#FD684A" }}
-      >
-        <BouncingElement>
-          <Image
-            src={PopArt}
-            alt="herro"
-            className="border-4 md:border-8 border-[#0D1141] rounded-full shadow-2xl w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96"
-          />
-        </BouncingElement>
+      <div className="container font-sans mx-auto flex flex-col min-h-full py-8 px-5 md:items-center md:my-20">
+        <section>
+          <h1 className="text-4xl md:text-5xl">Aman Pathak</h1>
+          <IntroCardTitle />
+
+          <section className="flex md:flex-row flex-col justify-between">
+            <div className="flex flex-col ">
+              <StartLinks />
+              <RecentlyOpened />
+            </div>
+            <ConnectionLinks />
+          </section>
+        </section>
       </div>
     </main>
   );
