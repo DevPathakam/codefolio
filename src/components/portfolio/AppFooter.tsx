@@ -4,7 +4,7 @@ import { ViewResumeButton } from "../client/portfolio/ViewResumeButton";
 import { FooterFileType } from "../client/portfolio/FooterFileType";
 import { FooterLineCounts } from "../client/portfolio/FooterLineCounts";
 
-export const PortfolioFooter = () => {
+export const AppFooter = () => {
   return (
     <footer className="w-full absolute bottom-0 text-gray-400 px-1 bg-brand-primary-deep-dark text-[12px] border-t border-brand-border flex gap-3 justify-between">
       {/* Left side */}

@@ -8,8 +8,7 @@ import { ScrollbarClasses, Skills } from "@/constants/portfolio";
 import { Icon } from "@iconify/react";
 import { Explorer } from "@/components/portfolio/Explorer";
 import { Tabbar } from "@/components/portfolio/Tabbar";
-import { PortfolioFooter } from "@/components/portfolio/PortfolioFooter";
-
+import { AppFooter } from "@/components/portfolio/AppFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,7 +75,7 @@ export default function RootLayout({
               </main>
             </div>
           </div>
-          <PortfolioFooter />
+          <AppFooter />
         </div>
       </body>
     </html>
