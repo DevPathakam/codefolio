@@ -40,15 +40,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
-        <div className="h-screen w-screen overflow-hidden">
+      <body className="min-h-dvh flex flex-col">
+        <div className="h-dvh w-screen overflow-hidden flex flex-col">
           <NavigationListener />
 
           <AppHeader />
           <div
-            className={`flex flex-col h-screen w-screen overflow-hidden bg-brand-primary font-mono pb-16 ${jetBrainsMono.variable}`}
+            className={`flex flex-col flex-1 h-screen w-screen overflow-hidden bg-brand-primary font-mono ${jetBrainsMono.variable}`}
           >
-            <div className="flex flex-1 w-full overflow-hidden">
+            <div className="flex flex-1 min-h-0 w-full overflow-hidden">
               <aside className="hidden md:block bg-brand-primary-dark border-r border-r-brand-border">
                 <VerticalMarquee className="px-3 flex flex-col gap-6  ">
                   {Skills.map(
@@ -66,7 +66,7 @@ export default function RootLayout({
 
               <Explorer />
 
-              <main className="flex-1 h-full flex flex-col overflow-hidden">
+              <main className="flex-1 min-h-0 h-full flex flex-col overflow-hidden">
                 <Tabbar />
 
                 <div className={`flex-1 overflow-y-auto ${ScrollbarClasses}`}>

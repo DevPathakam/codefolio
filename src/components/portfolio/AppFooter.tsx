@@ -6,7 +6,7 @@ import { FooterLineCounts } from "../client/portfolio/FooterLineCounts";
 
 export const AppFooter = () => {
   return (
-    <footer className="w-full absolute bottom-0 text-gray-400 px-1 bg-brand-primary-deep-dark text-[12px] border-t border-brand-border flex gap-3 justify-between">
+    <footer className="fixed inset-x-0 bottom-0 z-40 w-full text-gray-400 px-1 bg-brand-primary-deep-dark text-[12px] border-t border-brand-border flex gap-3 justify-between">
       {/* Left side */}
       <div className="flex gap-1">
         <Link
