@@ -1,6 +1,6 @@
 import { SkillProps } from "@/components/portfolio/Skill";
 import { SocialLinkProps } from "@/components/portfolio/SocialLink";
-import { CategoryValues } from "@/constants/portfolio";
+import { CategoryValues } from "@/data/skills/skillCategories";
 
 export type SocialLink = SocialLinkProps & { name: string, visible: boolean };
 

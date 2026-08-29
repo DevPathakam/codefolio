@@ -1,5 +1,5 @@
 import { DummyEditor } from "@/components/client/portfolio/DummyEditor";
-import { Skills, SkillSchema } from "@/constants/portfolio";
+import { Skills, SkillSchema } from "@/data/skills/skills";
 import { Skill, SkillCategory } from "@/types/portfolio";
 
 interface SkillByCategoryPageProps {

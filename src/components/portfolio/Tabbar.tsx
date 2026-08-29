@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ScrollbarClasses } from "@/constants/portfolio";
+import { ScrollbarClasses } from "@/constants/common";
 import { usePortfolioStore } from "@/stores/portfolioStore";
 import { Icon } from "@iconify/react";
 

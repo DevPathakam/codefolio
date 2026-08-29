@@ -1,5 +1,5 @@
 import { NpmPill } from "@/components/portfolio/NpmPill";
-import { Projects } from "@/constants/portfolio";
+import { Projects } from "@/data/projects/projects";
 import { Icon } from "@iconify/react";
 
 interface ProjectPageProps {
