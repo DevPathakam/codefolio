@@ -1,1 +1,1 @@
-export type PageName = "home" | "about" | "portfolio" 
+export type PageName = 'home' | 'about' | 'portfolio';

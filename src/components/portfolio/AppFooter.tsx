@@ -1,8 +1,8 @@
-import { Icon } from "@iconify/react";
-import Link from "next/link";
-import { ViewResumeButton } from "../client/portfolio/ViewResumeButton";
-import { FooterFileType } from "../client/portfolio/FooterFileType";
-import { FooterLineCounts } from "../client/portfolio/FooterLineCounts";
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
+import { ViewResumeButton } from '../client/portfolio/ViewResumeButton';
+import { FooterFileType } from '../client/portfolio/FooterFileType';
+import { FooterLineCounts } from '../client/portfolio/FooterLineCounts';
 
 export const AppFooter = () => {
   return (
@@ -11,7 +11,7 @@ export const AppFooter = () => {
       <div className="flex gap-1">
         <Link
           href={
-            "https://github.com/DevPathakam/personal-branding-site/tree/main"
+            'https://github.com/DevPathakam/personal-branding-site/tree/main'
           }
           target="_blank"
           className="hidden md:flex gap-1 hover:bg-brand-primary-highlight hover:cursor-pointer p-1"
@@ -39,7 +39,7 @@ export const AppFooter = () => {
         </div>
 
         <Link
-          href={"https://nextjs.org/"}
+          href={'https://nextjs.org/'}
           target="_blank"
           className="hidden md:flex gap-1 hover:bg-brand-primary-highlight hover:cursor-pointer p-1"
         >

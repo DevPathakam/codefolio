@@ -1,15 +1,15 @@
-"use client";
+'use client';
 import {
   CategoryValues,
   Companies,
   Projects,
   ScrollbarClasses,
-} from "@/constants/portfolio";
-import { ExplorerAccordian } from "./ExplorerAccordian";
-import { FakeFile } from "@/types/portfolio";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
-import { usePortfolioStore } from "@/stores/portfolioStore";
+} from '@/constants/portfolio';
+import { ExplorerAccordian } from './ExplorerAccordian';
+import { FakeFile } from '@/types/portfolio';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
+import { usePortfolioStore } from '@/stores/portfolioStore';
 
 type AccordianItem = {
   header: string;
@@ -23,18 +23,18 @@ export const Explorer = () => {
     const list: FakeFile[] = [
       {
         href: `/skills/`,
-        fileName: "all",
-        type: "JSON",
+        fileName: 'all',
+        type: 'JSON',
         isActive: false,
-        belongsTo: "skills",
+        belongsTo: 'skills',
       },
       ...skillCategories.map(
         (category) =>
           ({
             href: `/skills/${category}`,
             fileName: category,
-            type: "JSON",
-            belongsTo: "skills",
+            type: 'JSON',
+            belongsTo: 'skills',
             isActive: false,
           }) as FakeFile,
       ),
@@ -47,9 +47,9 @@ export const Explorer = () => {
     const list: FakeFile[] = [
       {
         href: `/projects/`,
-        fileName: "all",
-        type: "Markdown",
-        belongsTo: "projects",
+        fileName: 'all',
+        type: 'Markdown',
+        belongsTo: 'projects',
         isActive: false,
       },
       ...Projects.map(
@@ -57,8 +57,8 @@ export const Explorer = () => {
           ({
             href: `/projects/${project.alias}`,
             fileName: project.alias,
-            type: "Markdown",
-            belongsTo: "projects",
+            type: 'Markdown',
+            belongsTo: 'projects',
             isActive: false,
           }) as FakeFile,
       ),
@@ -68,8 +68,8 @@ export const Explorer = () => {
   };
 
   const accordianItems: AccordianItem[] = [
-    { header: "skills", descendants: getSkillDescendants() },
-    { header: "projects", descendants: getProjectDescendants() },
+    { header: 'skills', descendants: getSkillDescendants() },
+    { header: 'projects', descendants: getProjectDescendants() },
   ];
 
   const showSidebar = usePortfolioStore((state) => state.showLeftSidebar);
@@ -92,7 +92,7 @@ export const Explorer = () => {
 
               <Link
                 key={`explorer-descendant-page-hello-user`}
-                href={"/"}
+                href={'/'}
                 className="hover:bg-brand-primary-highlight flex gap-2"
               >
                 <Icon icon="devicon:react" className="text-sm mt-1" />
@@ -116,9 +116,9 @@ export const Explorer = () => {
                 <div className="flex flex-col">
                   <span>{item.name.slice(0, 20)}</span>
                   <small>
-                    [{item.workFrom.month} {item.workFrom.year} -{" "}
+                    [{item.workFrom.month} {item.workFrom.year} -{' '}
                     {item.isCurrent
-                      ? "Present"
+                      ? 'Present'
                       : `${item.workTo?.month} ${item.workTo?.year}`}
                     ]
                   </small>

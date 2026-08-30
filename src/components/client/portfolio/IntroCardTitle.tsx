@@ -1,15 +1,15 @@
-"use client";
-import { animate } from "motion";
-import { motion, useMotionValue, useTransform } from "motion/react";
-import { useEffect, useMemo, useState } from "react";
+'use client';
+import { animate } from 'motion';
+import { motion, useMotionValue, useTransform } from 'motion/react';
+import { useEffect, useMemo, useState } from 'react';
 
 export const IntroCardTitle = () => {
   const phrases = useMemo(
     () => [
-      "Frontend Developer",
-      "Software Engineer",
-      "Critical Thinker",
-      "Tech Builder",
+      'Frontend Developer',
+      'Software Engineer',
+      'Critical Thinker',
+      'Tech Builder',
     ],
     [],
   );
@@ -28,15 +28,15 @@ export const IntroCardTitle = () => {
     const typingSpeed = currentLength * 0.1;
     const erasingSpeed = currentLength * 0.1;
     const controls = animate(count, currentLength, {
-      type: "tween",
+      type: 'tween',
       duration: typingSpeed,
-      ease: "linear",
+      ease: 'linear',
       onComplete: () => {
         setTimeout(() => {
           const eraseControls = animate(count, 0, {
-            type: "tween",
+            type: 'tween',
             duration: erasingSpeed,
-            ease: "linear",
+            ease: 'linear',
             onComplete: () => {
               // Move to the next phrase and loop back around
               setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
@@ -51,7 +51,7 @@ export const IntroCardTitle = () => {
   }, [count, currentPhraseIndex, phrases]);
 
   const textboxStyles =
-    "border rounded-2xl border-brand-border w-70 md:w-100 p-2 bg-brand-primary-deep-dark";
+    'border rounded-2xl border-brand-border w-70 md:w-100 p-2 bg-brand-primary-deep-dark';
 
   return (
     <h2
@@ -60,7 +60,7 @@ export const IntroCardTitle = () => {
       <motion.span>{displayText}</motion.span>
       <motion.span
         animate={{ opacity: [1, 0, 1] }}
-        transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+        transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
         className="inline-block w-1 h-6 md:h-8 ml-1 text-brand-secondary"
       >
         |

@@ -1,6 +1,6 @@
-import { NpmPill } from "@/components/portfolio/NpmPill";
-import { Projects } from "@/constants/portfolio";
-import { Icon } from "@iconify/react";
+import { NpmPill } from '@/components/portfolio/NpmPill';
+import { Projects } from '@/constants/portfolio';
+import { Icon } from '@iconify/react';
 
 interface ProjectPageProps {
   params: Promise<{
