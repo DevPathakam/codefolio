@@ -1,15 +1,13 @@
 'use client';
-import {
-  CategoryValues,
-  Companies,
-  Projects,
-  ScrollbarClasses,
-} from '@/constants/portfolio';
+import { ScrollbarClasses } from '@/constants/common';
 import { ExplorerAccordian } from './ExplorerAccordian';
 import { FakeFile } from '@/types/portfolio';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import { usePortfolioStore } from '@/stores/portfolioStore';
+import { Companies } from '@/data/companies/companies';
+import { CategoryValues } from '@/data/skills/skillCategories';
+import { Projects } from '@/data/projects/projects';
 
 type AccordianItem = {
   header: string;

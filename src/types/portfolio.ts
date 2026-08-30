@@ -1,6 +1,7 @@
 import { SkillProps } from '@/components/portfolio/Skill';
 import { SocialLinkProps } from '@/components/portfolio/SocialLink';
-import { CategoryValues } from '@/constants/portfolio';
+import { CategoryValues } from '@/data/skills/skillCategories';
+import { MonthAndYear } from './app.types';
 
 export type SocialLink = SocialLinkProps & { name: string; visible: boolean };
 
@@ -22,8 +23,8 @@ export type FakeFile = {
 export type Company = {
   name: string;
   alias: string;
-  workFrom: { month: string; year: number };
-  workTo?: { month: string; year: number };
+  workFrom: MonthAndYear;
+  workTo?: MonthAndYear;
   isCurrent?: boolean;
   location: string;
   roles: string[];
@@ -41,6 +42,9 @@ export type Project = {
   duration: string;
   liveUrl?: string;
   isVisible: boolean;
+  isOngoing?: boolean;
+  startedOn?: MonthAndYear;
+  endOn?: MonthAndYear;
 };
 export type Achievement = {
   name: string;

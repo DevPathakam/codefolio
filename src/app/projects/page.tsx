@@ -1,4 +1,4 @@
-import { Projects } from '@/constants/portfolio';
+import { Projects } from '@/data/projects/projects';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 

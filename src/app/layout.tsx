@@ -4,11 +4,12 @@ import './globals.css';
 import { AppHeader } from '@/components/portfolio/AppHeader';
 import { NavigationListener } from '@/components/NavigationListener';
 import { VerticalMarquee } from '@/components/client/VerticalMarquee';
-import { ScrollbarClasses, Skills } from '@/constants/portfolio';
+import { ScrollbarClasses } from '@/constants/common';
 import { Icon } from '@iconify/react';
 import { Explorer } from '@/components/portfolio/Explorer';
 import { Tabbar } from '@/components/portfolio/Tabbar';
 import { AppFooter } from '@/components/portfolio/AppFooter';
+import { Skills } from '@/data/skills/skills';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
