@@ -10,7 +10,7 @@ export const ProjectHighlights = {
   Levrx:
     'Levrx is the industry-leading pharmacy hub connecting every player in the pharmacy ecosystem. Levrx unifies pharmacy, benefit, and clinical data into a single digital experience, giving providers and patients clear answers on what it will cost, where to go, and what to do next before a prescription is filled. By turning complexity into real-time, actionable guidance in one place, Levrx reduces friction, captures savings that would otherwise be missed, and improves outcomes across the entire healthcare experience.',
   SysGenie:
-    'SysGenie is an attempt to make the high-level system designing more easy. It\'s a tool that helps a developer to design the system architecture.',
+    "SysGenie is an attempt to make the high-level system designing more easy. It's a tool that helps a developer to design the system architecture.",
   Codefolio:
     'A VS Code themed portfolio. More preciesly, an attempt to create a digital personality of myself.',
 };

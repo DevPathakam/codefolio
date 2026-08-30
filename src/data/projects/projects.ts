@@ -72,6 +72,8 @@ export const Projects: Project[] = [
     isPersonal: true,
     techStack: getTechStack(ProjectTechStack.SysGenie),
     duration: '3 weeks',
+    startedOn: { month: 'May', year: 2026 },
+    isOngoing: true,
     isVisible: true,
   },
   {
