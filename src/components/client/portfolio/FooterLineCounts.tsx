@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { usePortfolioStore } from "@/stores/portfolioStore";
+import { usePortfolioStore } from '@/stores/portfolioStore';
 
 export const FooterLineCounts = () => {
   const count = usePortfolioStore((state) => state.jsonFileLineCounts);

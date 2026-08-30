@@ -1,20 +1,23 @@
-import { ToggleSidebar } from "@/components/client/portfolio/ToggleSidebar";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
+import { ToggleSidebar } from '@/components/client/portfolio/ToggleSidebar';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 export const AppHeader = () => {
   return (
     <header className="relative w-full bg-brand-primary-deep-dark top-0 flex justify-between items-center text-[12px] z-55">
       <div>
         <Link
-          href={"/"}
+          href={'/'}
           className="bg-transparent hover:cursor-pointer hover:opacity-50"
         >
-          <Icon icon={"typcn:home"} className="mx-3 text-[25px] hover:opacity-50" />
+          <Icon
+            icon={'typcn:home'}
+            className="mx-3 text-[25px] hover:opacity-50"
+          />
         </Link>
       </div>
       <div className="hidden md:flex border p-1 my-1 border-brand-border rounded-2xl gap-1 min-w-sm justify-center">
-        <Icon icon={"iconamoon:search"} className="text-[16px]" />
+        <Icon icon={'iconamoon:search'} className="text-[16px]" />
         <span>amanpathak.devwork</span>
       </div>
 

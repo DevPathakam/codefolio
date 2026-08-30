@@ -1,8 +1,8 @@
-import { SkillProps } from "@/components/portfolio/Skill";
-import { SocialLinkProps } from "@/components/portfolio/SocialLink";
-import { CategoryValues } from "@/constants/portfolio";
+import { SkillProps } from '@/components/portfolio/Skill';
+import { SocialLinkProps } from '@/components/portfolio/SocialLink';
+import { CategoryValues } from '@/constants/portfolio';
 
-export type SocialLink = SocialLinkProps & { name: string, visible: boolean };
+export type SocialLink = SocialLinkProps & { name: string; visible: boolean };
 
 export type SkillCategory = (typeof CategoryValues)[number];
 export type Skill = SkillProps & {
@@ -15,7 +15,7 @@ export type FakeFile = {
   href: string;
   fileName: string;
   type: FakeFileType;
-  isActive: boolean
+  isActive: boolean;
   belongsTo: FakeFileBelongsTo;
 };
 
@@ -27,8 +27,8 @@ export type Company = {
   isCurrent?: boolean;
   location: string;
   roles: string[];
-  jobType: "Full-Time" | "Part-Time" | "Contractual";
-  workMode: "In-Office" | "Hybrid" | "Remote";
+  jobType: 'Full-Time' | 'Part-Time' | 'Contractual';
+  workMode: 'In-Office' | 'Hybrid' | 'Remote';
 };
 export type Project = {
   name: string;
@@ -44,11 +44,11 @@ export type Project = {
 };
 export type Achievement = {
   name: string;
-  type: "award" | "certification";
+  type: 'award' | 'certification';
   year: number;
   achievedFrom?: string;
   achievedAt?: Company;
 };
 
-export type FakeFileBelongsTo = "skills" | "projects" | "root";
-export type FakeFileType = "Markdown" | "JSON";
+export type FakeFileBelongsTo = 'skills' | 'projects' | 'root';
+export type FakeFileType = 'Markdown' | 'JSON';

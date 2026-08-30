@@ -1,6 +1,6 @@
-import { DummyEditor } from "@/components/client/portfolio/DummyEditor";
-import { Skills, SkillSchema } from "@/constants/portfolio";
-import { Skill, SkillCategory } from "@/types/portfolio";
+import { DummyEditor } from '@/components/client/portfolio/DummyEditor';
+import { Skills, SkillSchema } from '@/constants/portfolio';
+import { Skill, SkillCategory } from '@/types/portfolio';
 
 interface SkillByCategoryPageProps {
   params: Promise<{

@@ -1,7 +1,7 @@
-import { IntroCardTitle } from "@/components/client/portfolio/IntroCardTitle";
-import { RecentlyOpened } from "@/components/client/RecentlyOpened";
-import { ConnectionLinks } from "@/components/ConnectionLinks";
-import { StartLinks } from "@/components/StartLinks";
+import { IntroCardTitle } from '@/components/client/portfolio/IntroCardTitle';
+import { RecentlyOpened } from '@/components/client/RecentlyOpened';
+import { ConnectionLinks } from '@/components/ConnectionLinks';
+import { StartLinks } from '@/components/StartLinks';
 
 export default function HomePage() {
   return (
