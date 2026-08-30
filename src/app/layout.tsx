@@ -1,34 +1,34 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import { AppHeader } from "@/components/portfolio/AppHeader";
-import { NavigationListener } from "@/components/NavigationListener";
-import { VerticalMarquee } from "@/components/client/VerticalMarquee";
-import { ScrollbarClasses } from "@/constants/common";
-import { Icon } from "@iconify/react";
-import { Explorer } from "@/components/portfolio/Explorer";
-import { Tabbar } from "@/components/portfolio/Tabbar";
-import { AppFooter } from "@/components/portfolio/AppFooter";
-import { Skills } from "@/data/skills/skills";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
+import './globals.css';
+import { AppHeader } from '@/components/portfolio/AppHeader';
+import { NavigationListener } from '@/components/NavigationListener';
+import { VerticalMarquee } from '@/components/client/VerticalMarquee';
+import { ScrollbarClasses } from '@/constants/common';
+import { Icon } from '@iconify/react';
+import { Explorer } from '@/components/portfolio/Explorer';
+import { Tabbar } from '@/components/portfolio/Tabbar';
+import { AppFooter } from '@/components/portfolio/AppFooter';
+import { Skills } from '@/data/skills/skills';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
 });
 
 export const metadata: Metadata = {
-  title: "Aman Pathak - Frontend Developer | Software Engineer",
-  description: "Codefolio - A VS Code themed portfolio.",
+  title: 'Aman Pathak - Frontend Developer | Software Engineer',
+  description: 'Codefolio - A VS Code themed portfolio.',
 };
 
 export default function RootLayout({
@@ -57,7 +57,7 @@ export default function RootLayout({
                       skill.isFeatured && (
                         <Icon
                           key={`sidebar-skill-${idx}`}
-                          icon={skill.icon ?? ""}
+                          icon={skill.icon ?? ''}
                           className="text-3xl"
                         />
                       ),

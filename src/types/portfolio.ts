@@ -1,8 +1,9 @@
-import { SkillProps } from "@/components/portfolio/Skill";
-import { SocialLinkProps } from "@/components/portfolio/SocialLink";
-import { CategoryValues } from "@/data/skills/skillCategories";
+import { SkillProps } from '@/components/portfolio/Skill';
+import { SocialLinkProps } from '@/components/portfolio/SocialLink';
+import { CategoryValues } from '@/data/skills/skillCategories';
+import { MonthAndYear } from './app.types';
 
-export type SocialLink = SocialLinkProps & { name: string, visible: boolean };
+export type SocialLink = SocialLinkProps & { name: string; visible: boolean };
 
 export type SkillCategory = (typeof CategoryValues)[number];
 export type Skill = SkillProps & {
@@ -15,20 +16,20 @@ export type FakeFile = {
   href: string;
   fileName: string;
   type: FakeFileType;
-  isActive: boolean
+  isActive: boolean;
   belongsTo: FakeFileBelongsTo;
 };
 
 export type Company = {
   name: string;
   alias: string;
-  workFrom: { month: string; year: number };
-  workTo?: { month: string; year: number };
+  workFrom: MonthAndYear;
+  workTo?: MonthAndYear;
   isCurrent?: boolean;
   location: string;
   roles: string[];
-  jobType: "Full-Time" | "Part-Time" | "Contractual";
-  workMode: "In-Office" | "Hybrid" | "Remote";
+  jobType: 'Full-Time' | 'Part-Time' | 'Contractual';
+  workMode: 'In-Office' | 'Hybrid' | 'Remote';
 };
 export type Project = {
   name: string;
@@ -41,14 +42,17 @@ export type Project = {
   duration: string;
   liveUrl?: string;
   isVisible: boolean;
+  isOngoing?: boolean;
+  startedOn?: MonthAndYear;
+  endOn?: MonthAndYear;
 };
 export type Achievement = {
   name: string;
-  type: "award" | "certification";
+  type: 'award' | 'certification';
   year: number;
   achievedFrom?: string;
   achievedAt?: Company;
 };
 
-export type FakeFileBelongsTo = "skills" | "projects" | "root";
-export type FakeFileType = "Markdown" | "JSON";
+export type FakeFileBelongsTo = 'skills' | 'projects' | 'root';
+export type FakeFileType = 'Markdown' | 'JSON';

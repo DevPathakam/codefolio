@@ -1,6 +1,6 @@
-import { Projects } from "@/data/projects/projects";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
+import { Projects } from '@/data/projects/projects';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 export default function ProjectsPage() {
   return (
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
                   <div className="flex gap-2 text-2xl">
                     {project.techStack.map((tech, idx) => (
                       <span key={`${project.name}-tech-${idx}`}>
-                        <Icon icon={tech.icon ?? ""} />
+                        <Icon icon={tech.icon ?? ''} />
                       </span>
                     ))}
                   </div>

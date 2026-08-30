@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion, MotionStyle } from "motion/react";
-import { ReactNode } from "react";
+import { motion, MotionStyle } from 'motion/react';
+import { ReactNode } from 'react';
 
 interface VerticalMarqueeProps {
   className?: string;
@@ -15,12 +15,12 @@ export const VerticalMarquee = ({
 }: VerticalMarqueeProps) => {
   return (
     <motion.div
-      animate={{ y: ["0%", "-50%"] }} // Only needs to move half the total combined height
+      animate={{ y: ['0%', '-50%'] }} // Only needs to move half the total combined height
       transition={{
-        ease: "linear",
+        ease: 'linear',
         duration: 40,
         repeat: Infinity,
-        repeatType: "loop"
+        repeatType: 'loop',
       }}
       className={className}
       style={containerStyle}

@@ -1,1 +1,1 @@
-export type PageName = "home" | "about" | "portfolio" 
+export type MonthAndYear = { month: string; year: number };

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion, MotionStyle } from "motion/react";
-import { ReactNode } from "react";
+import { motion, MotionStyle } from 'motion/react';
+import { ReactNode } from 'react';
 
 interface BouncingElementProps {
   className?: string;
@@ -20,9 +20,9 @@ export const BouncingElement = ({
       }}
       transition={{
         duration: 0.8, // Time taken for one complete cycle (seconds)
-        ease: "easeInOut", // Smooth easing for natural movement
+        ease: 'easeInOut', // Smooth easing for natural movement
         repeat: Infinity, // Loop the animation indefinitely
-        repeatType: "loop", // Restarts the array keyframes sequentially
+        repeatType: 'loop', // Restarts the array keyframes sequentially
       }}
       className={className}
       style={containerStyle}

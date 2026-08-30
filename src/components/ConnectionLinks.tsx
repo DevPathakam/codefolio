@@ -1,6 +1,6 @@
-import { SocialLinks } from "@/data/socialLinks";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
+import { SocialLinks } from '@/data/socialLinks';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 export const ConnectionLinks = () => {
   return (
@@ -14,7 +14,7 @@ export const ConnectionLinks = () => {
               className="flex hover:text-blue-100 hover:underline"
             >
               <span className="mt-1 mr-2">
-                <Icon icon={file.icon ?? ""} />
+                <Icon icon={file.icon ?? ''} />
               </span>
               <span>{file.text}</span>
             </Link>

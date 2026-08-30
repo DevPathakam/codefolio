@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { usePortfolioStore } from "@/stores/portfolioStore";
-import { FakeFile } from "@/types/portfolio";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { usePortfolioStore } from '@/stores/portfolioStore';
+import { FakeFile } from '@/types/portfolio';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
+import { ReactNode, useState } from 'react';
 
 interface ExplorerAccordianProps {
   header: ReactNode | string;
@@ -16,7 +16,7 @@ export const ExplorerAccordian = ({
 }: ExplorerAccordianProps) => {
   const [showDescendants, setShowDescendants] = useState(true);
 
-  const activateFile =  usePortfolioStore((state) => state.addActiveFile)
+  const activateFile = usePortfolioStore((state) => state.addActiveFile);
 
   return (
     <div>
@@ -24,7 +24,7 @@ export const ExplorerAccordian = ({
         className="hover:bg-brand-primary-highlight hover:cursor-pointer w-full text-start"
         onClick={() => setShowDescendants((prev) => !prev)}
       >
-        {showDescendants ? "📂" : "📁"} {header}
+        {showDescendants ? '📂' : '📁'} {header}
       </button>
       {showDescendants && (
         <div className="flex flex-col pl-4">
@@ -37,15 +37,15 @@ export const ExplorerAccordian = ({
             >
               <Icon
                 icon={
-                  descendant.type === "JSON"
-                    ? "material-icon-theme:json"
-                    : "material-icon-theme:markdown"
+                  descendant.type === 'JSON'
+                    ? 'material-icon-theme:json'
+                    : 'material-icon-theme:markdown'
                 }
                 className="text-xl"
               />
               <span className="text-sm">
                 {descendant.fileName}
-                {descendant.type === "JSON" ? ".json" : ".md"}
+                {descendant.type === 'JSON' ? '.json' : '.md'}
               </span>
             </Link>
           ))}
