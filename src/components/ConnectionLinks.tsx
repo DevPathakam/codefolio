@@ -1,4 +1,4 @@
-import { SocialLinks } from '@/constants/portfolio';
+import { SocialLinks } from '@/data/socialLinks';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 

@@ -1,4 +1,5 @@
-import { Companies, Skills } from '@/constants/portfolio';
+import { Companies } from '@/data/companies/companies';
+import { Skills } from '@/data/skills/skills';
 import { Line, LineOptions } from '@/types/dummyEditor';
 
 export function getTechStack(stackSkills: string[]) {
