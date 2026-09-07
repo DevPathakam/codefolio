@@ -1,8 +1,9 @@
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
-import { ViewResumeButton } from '../client/portfolio/ViewResumeButton';
+import { DownloadResumeButton } from '../client/portfolio/DownloadResumeButton';
 import { FooterFileType } from '../client/portfolio/FooterFileType';
 import { FooterLineCounts } from '../client/portfolio/FooterLineCounts';
+import { getEmail } from '@/utils/commonHelper';
 
 export const AppFooter = () => {
   return (
@@ -20,7 +21,7 @@ export const AppFooter = () => {
           <span>main*</span>
         </Link>
 
-        <ViewResumeButton />
+        <DownloadResumeButton />
       </div>
 
       {/* Right side */}
@@ -31,7 +32,7 @@ export const AppFooter = () => {
 
         <div className="flex gap-1 p-1">
           <Icon icon="material-symbols:mail" className="text-[18px]" />
-          <span>amanpathak.devwork@gmail.com</span>
+          <span>{getEmail()}</span>
         </div>
 
         <div className="hidden md:flex gap-1 p-1">

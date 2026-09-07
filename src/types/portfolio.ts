@@ -55,4 +55,4 @@ export type Achievement = {
 };
 
 export type FakeFileBelongsTo = 'skills' | 'projects' | 'root';
-export type FakeFileType = 'Markdown' | 'JSON';
+export type FakeFileType = 'Markdown' | 'JSON' | 'PDF' | 'TSX';

@@ -3,7 +3,7 @@
 import { Icon } from '@iconify/react';
 import { useRef } from 'react';
 
-export const ViewResumeButton = () => {
+export const DownloadResumeButton = () => {
   const downloadLinkRef = useRef<HTMLAnchorElement | null>(null);
   const handleDownload = async () => {
     try {
@@ -38,9 +38,9 @@ export const ViewResumeButton = () => {
       >
         <Icon
           icon="material-symbols:download"
-          className="hidden md:block text-[18px]"
+          className="md:block text-[18px]"
         />
-        <span>View Resume</span>
+        <span>Download Resume</span>
       </button>
     </>
   );
