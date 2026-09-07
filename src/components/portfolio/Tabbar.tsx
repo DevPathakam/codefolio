@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { ScrollbarClasses } from '@/constants/common';
 import { usePortfolioStore } from '@/stores/portfolioStore';
 import { Icon } from '@iconify/react';
+import { getFileExtension, getFileIcon } from '@/utils/commonHelper';
 
 export const Tabbar = () => {
   const activeTabClasses = 'border-t border-t-brand-secondary bg-brand-primary';
@@ -36,8 +37,9 @@ export const Tabbar = () => {
             onClick={() => activateFile(file)}
             className={`px-4 h-full flex items-center text-sm border-r border-r-brand-primary-deep-dark ${file.isActive ? activeTabClasses : inactiveTabClasses} hover:cursor-pointer`}
           >
+            <Icon icon={getFileIcon(file.type)} className="me-1.5" />
             <span>
-              {file.fileName}.{file.type === 'JSON' ? 'json' : 'md'}
+              {file.fileName}.{getFileExtension(file.type)}
             </span>
             <Icon
               icon={'akar-icons:cross'}

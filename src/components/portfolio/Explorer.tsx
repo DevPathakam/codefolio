@@ -8,12 +8,15 @@ import { usePortfolioStore } from '@/stores/portfolioStore';
 import { Companies } from '@/data/companies/companies';
 import { CategoryValues } from '@/data/skills/skillCategories';
 import { Projects } from '@/data/projects/projects';
+import { getFileExtension, getFileIcon } from '@/utils/commonHelper';
 
 type AccordianItem = {
   header: string;
   descendants: FakeFile[];
 };
 export const Explorer = () => {
+  const activateFile = usePortfolioStore((state) => state.addActiveFile);
+
   const getSkillDescendants = () => {
     const skillCategories = CategoryValues.map((category) =>
       category.toLowerCase(),
@@ -70,6 +73,26 @@ export const Explorer = () => {
     { header: 'projects', descendants: getProjectDescendants() },
   ];
 
+  const rootFiles: FakeFile[] = [
+    // Welcome Page
+    {
+      href: `/`,
+      fileName: 'hello_user',
+      type: 'TSX',
+      belongsTo: 'root',
+      isActive: false,
+    },
+
+    // Resume Page
+    {
+      href: `/resume`,
+      fileName: 'resume',
+      type: 'PDF',
+      belongsTo: 'root',
+      isActive: false,
+    },
+  ];
+
   const showSidebar = usePortfolioStore((state) => state.showLeftSidebar);
   return (
     showSidebar && (
@@ -88,14 +111,19 @@ export const Explorer = () => {
                 />
               ))}
 
-              <Link
-                key={`explorer-descendant-page-hello-user`}
-                href={'/'}
-                className="hover:bg-brand-primary-highlight flex gap-2"
-              >
-                <Icon icon="devicon:react" className="text-sm mt-1" />
-                <span className="text-sm">hello_user.tsx</span>
-              </Link>
+              {rootFiles.map((rf) => (
+                <Link
+                  key={`explorer-descendant-page-${rf.fileName}`}
+                  href={rf.href}
+                  className="hover:bg-brand-primary-highlight flex gap-2"
+                  onClick={() => activateFile(rf)}
+                >
+                  <Icon icon={getFileIcon(rf.type)} className="text-sm mt-1" />
+                  <span className="text-sm">
+                    {rf.fileName}.{getFileExtension(rf.type)}
+                  </span>
+                </Link>
+              ))}
             </>
           </div>
         </div>
