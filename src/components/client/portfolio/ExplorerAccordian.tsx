@@ -38,8 +38,7 @@ export const ExplorerAccordian = ({
             >
               <Icon icon={getFileIcon(descendant.type)} className="text-xl" />
               <span className="text-sm">
-                {descendant.fileName}.
-                {getFileExtension(descendant.type)}
+                {descendant.fileName}.{getFileExtension(descendant.type)}
               </span>
             </Link>
           ))}
