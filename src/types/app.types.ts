@@ -12,4 +12,6 @@ type Month =
   | 'Nov'
   | 'Dec';
 
-export type MonthAndYear = { month: Month; year: number };
+export type ReadableDuration = { month: Month; year: number };
+
+export type Duration = { years: number; months: number };

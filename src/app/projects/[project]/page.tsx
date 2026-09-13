@@ -1,4 +1,5 @@
 import { NpmPill } from '@/components/portfolio/NpmPill';
+import { Skill } from '@/components/portfolio/Skill';
 import { Projects } from '@/data/projects/projects';
 import { Icon } from '@iconify/react';
 interface ProjectPageProps {
@@ -67,16 +68,31 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="border border-brand-border rounded-xl flex flex-wrap gap-4 md:gap-9 my-5 p-3 text-3xl w-fit shadow-2xl bg-brand-primary-deep-dark">
             {selectedProject.techStack.length > 0 &&
               selectedProject.techStack.map((tech, idx) => (
-                <p
-                  key={`project-tech-${idx}`}
-                  className="flex flex-col items-center"
-                >
-                  {tech.icon && (
-                    <span>
-                      <Icon icon={tech.icon} />
-                    </span>
-                  )}
-                </p>
+                <div key={`project-tech-${idx}`} className="relative">
+                  <div
+                    className="flex flex-col items-center peer"
+                    title={tech.name}
+                  >
+                    {tech.icon && (
+                      <>
+                        <span className="hover:scale-200">
+                          <Icon icon={tech.icon} />
+                        </span>
+                      </>
+                    )}
+                  </div>
+
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-gray-800 text-white text-sm border border-brand-secondary rounded-3xl py-1 px-2 whitespace-nowrap shadow-lg">
+                    <Skill
+                      key={`hovered-tech-${idx}`}
+                      name={tech.name}
+                      icon={tech.icon}
+                      category={tech.category}
+                      tags={tech.tags}
+                      usingSince={tech.usingSince}
+                    />
+                  </div>
+                </div>
               ))}
           </div>
 

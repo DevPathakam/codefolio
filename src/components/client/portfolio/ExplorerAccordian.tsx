@@ -36,7 +36,7 @@ export const ExplorerAccordian = ({
               className="hover:bg-brand-primary-highlight flex gap-2"
               onClick={() => activateFile(descendant)}
             >
-              <Icon icon={getFileIcon(descendant.type)} className="text-xl" />
+              <Icon icon={getFileIcon(descendant.type)} className="text-sm" />
               <span className="text-sm">
                 {descendant.fileName}.{getFileExtension(descendant.type)}
               </span>

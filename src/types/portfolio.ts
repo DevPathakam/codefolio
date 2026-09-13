@@ -12,6 +12,18 @@ export type Skill = SkillProps & {
   isFeatured?: boolean;
 };
 
+export type SkillMetadata = {
+    counts: {
+        total: number,
+        [key: string]: number
+    },
+    experience: {
+        high:  string[],
+        mid: string[],
+        initial: string[]
+    }
+}
+
 export type FakeFile = {
   href: string;
   fileName: string;
@@ -55,4 +67,4 @@ export type Achievement = {
 };
 
 export type FakeFileBelongsTo = 'skills' | 'projects' | 'root';
-export type FakeFileType = 'Markdown' | 'JSON' | 'PDF' | 'TSX';
+export type FakeFileType = 'Markdown' | 'JSON' | 'PDF' | 'TSX' | 'HTML';

@@ -5,6 +5,8 @@ export const getEmail = () => SocialLinks.find((x) => x.name === 'email')?.text;
 
 export const getFileIcon = (type: FakeFileType): string => {
   switch (type) {
+    case 'HTML':
+      return 'material-icon-theme:html';
     case 'JSON':
       return 'material-icon-theme:json';
     case 'Markdown':
@@ -20,6 +22,8 @@ export const getFileIcon = (type: FakeFileType): string => {
 
 export const getFileExtension = (type: FakeFileType): string => {
   switch (type) {
+    case 'HTML':
+      return 'html';
     case 'JSON':
       return 'json';
     case 'Markdown':

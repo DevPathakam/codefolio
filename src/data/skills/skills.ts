@@ -13,6 +13,7 @@ export const Skills: Skill[] = [
     isFeatured: true,
     category: SkillCategories.React,
     tags: SkillTags.React,
+    usingSince: { month: 'Feb', year: 2021 },
   },
   {
     name: 'Javascript',
@@ -22,6 +23,7 @@ export const Skills: Skill[] = [
     isFeatured: true,
     category: SkillCategories.Javascript,
     tags: SkillTags.Javascript,
+    usingSince: { month: 'Feb', year: 2017 },
   },
   {
     name: 'Next JS',
@@ -29,6 +31,7 @@ export const Skills: Skill[] = [
     icon: 'devicon:nextjs',
     visible: true,
     category: SkillCategories.NextJS,
+    usingSince: { month: 'Apr', year: 2025 },
   },
   {
     name: 'Typescript',
@@ -37,6 +40,7 @@ export const Skills: Skill[] = [
     visible: true,
     isFeatured: true,
     category: SkillCategories.Typescript,
+    usingSince: { month: 'May', year: 2018 },
   },
   {
     name: 'React Native (Expo)',
@@ -45,6 +49,7 @@ export const Skills: Skill[] = [
     visible: true,
     isFeatured: true,
     category: SkillCategories.ReactNativeExpo,
+    usingSince: { month: 'Mar', year: 2021 },
   },
   {
     name: 'Redux',
@@ -54,6 +59,7 @@ export const Skills: Skill[] = [
     isFeatured: true,
     category: SkillCategories.Redux,
     tags: SkillTags.Redux,
+    usingSince: { month: 'Feb', year: 2021 },
   },
   {
     name: 'Redux Saga',
@@ -63,6 +69,7 @@ export const Skills: Skill[] = [
     isFeatured: true,
     category: SkillCategories.ReduxSaga,
     tags: SkillTags.ReduxSaga,
+    usingSince: { month: 'Feb', year: 2021 },
   },
   {
     name: 'Zustand',
@@ -72,6 +79,7 @@ export const Skills: Skill[] = [
     isFeatured: false,
     category: SkillCategories.Zustand,
     tags: SkillTags.Zustand,
+    usingSince: { month: 'Jul', year: 2026 },
   },
   {
     name: 'React Flow',
@@ -79,6 +87,7 @@ export const Skills: Skill[] = [
     icon: 'fluent:flow-16-regular',
     visible: true,
     category: SkillCategories.ReactFlow,
+    usingSince: { month: 'May', year: 2026 },
   },
   {
     name: 'Bootstrap',
@@ -87,6 +96,7 @@ export const Skills: Skill[] = [
     visible: true,
     isFeatured: true,
     category: SkillCategories.Bootstrap,
+    usingSince: { month: 'Feb', year: 2017 },
   },
   {
     name: 'Tailwind CSS',
@@ -94,6 +104,7 @@ export const Skills: Skill[] = [
     icon: 'devicon:tailwindcss',
     visible: true,
     category: SkillCategories.Tailwind,
+    usingSince: { month: 'May', year: 2025 },
   },
   {
     name: 'Motion',
@@ -102,6 +113,8 @@ export const Skills: Skill[] = [
     visible: true,
     isFeatured: false,
     category: SkillCategories.Motion,
+    usingSince: { month: 'Aug', year: 2026 },
+    tags: SkillTags.Motion,
   },
   // {
   //     name: "GSAP",
