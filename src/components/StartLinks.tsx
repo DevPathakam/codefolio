@@ -1,16 +1,16 @@
-import { Icon } from "@iconify/react";
-import Link from "next/link";
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 const startLinks = [
   {
-    label: "View Skills",
-    icon: "mdi:code",
-    href: "/skills",
+    label: 'View Skills',
+    icon: 'mdi:code',
+    href: '/skills',
   },
   {
-    label: "Open Projects",
-    icon: "material-symbols:folder-outline",
-    href: "/projects",
+    label: 'Open Projects',
+    icon: 'material-symbols:folder-outline',
+    href: '/projects',
   },
 ];
 export const StartLinks = () => (

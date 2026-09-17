@@ -1,6 +1,6 @@
-import { FakeFile, FakeFileBelongsTo } from "@/types/portfolio";
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { FakeFile, FakeFileBelongsTo } from '@/types/portfolio';
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 export type PortfolioState = {
   openFiles: FakeFile[];
@@ -125,7 +125,7 @@ export const usePortfolioStore = create<PortfolioStore>()(
       resetState: () => set((_state) => initialState),
     }),
     {
-      name: "portfolio-store",
+      name: 'portfolio-store',
     },
   ),
 );

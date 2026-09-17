@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { usePortfolioStore } from "@/stores/portfolioStore";
-import { Icon } from "@iconify/react";
+import { usePortfolioStore } from '@/stores/portfolioStore';
+import { Icon } from '@iconify/react';
 
 export const FooterFileType = () => {
   const currentFile = usePortfolioStore((state) => state.currentFile);

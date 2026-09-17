@@ -1,5 +1,5 @@
-import { SkillCategory } from "@/types/portfolio";
-import { Icon } from "@iconify/react";
+import { SkillCategory } from '@/types/portfolio';
+import { Icon } from '@iconify/react';
 
 export interface SkillProps {
   icon?: string;
@@ -11,7 +11,7 @@ export const Skill = ({ icon, name, tags }: SkillProps) => {
   return (
     <div
       className="flex gap-2 border-2 border-dashed p-3 rounded-2xl"
-      style={{ borderColor: "#ffc600" }}
+      style={{ borderColor: '#ffc600' }}
     >
       {icon && (
         <span className="pt-1 text-2xl">

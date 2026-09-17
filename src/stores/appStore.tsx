@@ -1,6 +1,6 @@
-import { PageName } from "@/types/app.types";
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { PageName } from '@/types/app.types';
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 export type AppState = {
   currentPage: PageName;
@@ -13,7 +13,7 @@ export type AppActions = {
 export type AppStore = AppState & AppActions;
 
 const initialState: AppState = {
-  currentPage: "home",
+  currentPage: 'home',
 };
 
 export const useAppStore = create<AppStore>()(
@@ -23,7 +23,7 @@ export const useAppStore = create<AppStore>()(
       updateCurrentPage: (newPage: PageName) => set({ currentPage: newPage }),
     }),
     {
-      name: "app-store",
+      name: 'app-store',
     },
   ),
 );

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { useAppStore } from "@/stores/appStore";
-import { getPageNameFromPath } from "@/utils/getPageNameFromPath";
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { useAppStore } from '@/stores/appStore';
+import { getPageNameFromPath } from '@/utils/getPageNameFromPath';
 
 export function NavigationListener() {
   const pathname = usePathname();

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { LineSegment } from "@/types/dummyEditor";
-import { createRenderLines } from "@/utils/portfolio";
-import { usePortfolioStore } from "@/stores/portfolioStore";
+import { useEffect } from 'react';
+import { LineSegment } from '@/types/dummyEditor';
+import { createRenderLines } from '@/utils/portfolio';
+import { usePortfolioStore } from '@/stores/portfolioStore';
 
 interface DummyEditorProps<T> {
   data: T[];
@@ -17,21 +17,21 @@ export function DummyEditor<T>({ data, schema }: DummyEditorProps<T>) {
   );
 
   useEffect(() => {
-    setJsonFileLineCounts(currentFileType === "JSON" ? lines.length : null);
+    setJsonFileLineCounts(currentFileType === 'JSON' ? lines.length : null);
   }, [currentFileType, lines.length, setJsonFileLineCounts]);
 
   const getCodeClasses = (segment: LineSegment) => {
-    let classes = "";
-    if (segment.type === "bracket") classes += "text-brand-secondary ";
-    if (segment.type === "brace") classes += "text-pink-500 ";
-    if (segment.type === "key") classes += "text-amber-300 ";
-    if (segment.type === "value") classes += "text-amber-50 ";
+    let classes = '';
+    if (segment.type === 'bracket') classes += 'text-brand-secondary ';
+    if (segment.type === 'brace') classes += 'text-pink-500 ';
+    if (segment.type === 'key') classes += 'text-amber-300 ';
+    if (segment.type === 'value') classes += 'text-amber-50 ';
     return classes;
   };
 
   const renderSegmentText = (segment: LineSegment) => {
-    if (segment.type === "key") return `"${segment.text}": `;
-    if (segment.type === "value") return `"${segment.text}",`;
+    if (segment.type === 'key') return `"${segment.text}": `;
+    if (segment.type === 'value') return `"${segment.text}",`;
     return segment.text;
   };
 

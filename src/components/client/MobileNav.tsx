@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
+import { useState } from 'react';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 interface NavLink {
   href: string;

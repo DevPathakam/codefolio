@@ -1,21 +1,22 @@
-"use client";
-import {
-  CategoryValues,
-  Companies,
-  Projects,
-  ScrollbarClasses,
-} from "@/constants/portfolio";
-import { ExplorerAccordian } from "../client/portfolio/ExplorerAccordian";
-import { FakeFile } from "@/types/portfolio";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
-import { usePortfolioStore } from "@/stores/portfolioStore";
+'use client';
+import { ScrollbarClasses } from '@/constants/common';
+import { ExplorerAccordian } from '../client/portfolio/ExplorerAccordian';
+import { FakeFile } from '@/types/portfolio';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
+import { usePortfolioStore } from '@/stores/portfolioStore';
+import { Companies } from '@/data/companies/companies';
+import { CategoryValues } from '@/data/skills/skillCategories';
+import { Projects } from '@/data/projects/projects';
+import { getFileExtension, getFileIcon } from '@/utils/commonHelper';
 
 type AccordianItem = {
   header: string;
   descendants: FakeFile[];
 };
 export const Explorer = () => {
+  const activateFile = usePortfolioStore((state) => state.addActiveFile);
+
   const getSkillDescendants = () => {
     const skillCategories = CategoryValues.map((category) =>
       category.toLowerCase(),
@@ -23,18 +24,18 @@ export const Explorer = () => {
     const list: FakeFile[] = [
       {
         href: `/skills/`,
-        fileName: "all",
-        type: "JSON",
+        fileName: 'all',
+        type: 'JSON',
         isActive: false,
-        belongsTo: "skills",
+        belongsTo: 'skills',
       },
       ...skillCategories.map(
         (category) =>
           ({
             href: `/skills/${category}`,
             fileName: category,
-            type: "JSON",
-            belongsTo: "skills",
+            type: 'JSON',
+            belongsTo: 'skills',
             isActive: false,
           }) as FakeFile,
       ),
@@ -47,9 +48,9 @@ export const Explorer = () => {
     const list: FakeFile[] = [
       {
         href: `/projects/`,
-        fileName: "all",
-        type: "Markdown",
-        belongsTo: "projects",
+        fileName: 'all',
+        type: 'Markdown',
+        belongsTo: 'projects',
         isActive: false,
       },
       ...Projects.map(
@@ -57,8 +58,8 @@ export const Explorer = () => {
           ({
             href: `/projects/${project.alias}`,
             fileName: project.alias,
-            type: "Markdown",
-            belongsTo: "projects",
+            type: 'Markdown',
+            belongsTo: 'projects',
             isActive: false,
           }) as FakeFile,
       ),
@@ -68,8 +69,28 @@ export const Explorer = () => {
   };
 
   const accordianItems: AccordianItem[] = [
-    { header: "skills", descendants: getSkillDescendants() },
-    { header: "projects", descendants: getProjectDescendants() },
+    { header: 'skills', descendants: getSkillDescendants() },
+    { header: 'projects', descendants: getProjectDescendants() },
+  ];
+
+  const rootFiles: FakeFile[] = [
+    // Welcome Page
+    {
+      href: `/`,
+      fileName: 'hello_user',
+      type: 'TSX',
+      belongsTo: 'root',
+      isActive: false,
+    },
+
+    // Resume Page
+    {
+      href: `/resume`,
+      fileName: 'resume',
+      type: 'PDF',
+      belongsTo: 'root',
+      isActive: false,
+    },
   ];
 
   const showSidebar = usePortfolioStore((state) => state.showLeftSidebar);
@@ -90,14 +111,19 @@ export const Explorer = () => {
                 />
               ))}
 
-              <Link
-                key={`explorer-descendant-page-hello-user`}
-                href={"/"}
-                className="hover:bg-brand-primary-highlight flex gap-2"
-              >
-                <Icon icon="devicon:react" className="text-sm mt-1" />
-                <span className="text-sm">hello_user.tsx</span>
-              </Link>
+              {rootFiles.map((rf) => (
+                <Link
+                  key={`explorer-descendant-page-${rf.fileName}`}
+                  href={rf.href}
+                  className="hover:bg-brand-primary-highlight flex gap-2"
+                  onClick={() => activateFile(rf)}
+                >
+                  <Icon icon={getFileIcon(rf.type)} className="text-sm mt-1" />
+                  <span className="text-sm">
+                    {rf.fileName}.{getFileExtension(rf.type)}
+                  </span>
+                </Link>
+              ))}
             </>
           </div>
         </div>
@@ -116,9 +142,9 @@ export const Explorer = () => {
                 <div className="flex flex-col">
                   <span>{item.name.slice(0, 20)}</span>
                   <small>
-                    [{item.workFrom.month} {item.workFrom.year} -{" "}
+                    [{item.workFrom.month} {item.workFrom.year} -{' '}
                     {item.isCurrent
-                      ? "Present"
+                      ? 'Present'
                       : `${item.workTo?.month} ${item.workTo?.year}`}
                     ]
                   </small>
