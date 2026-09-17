@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { AppHeader } from '@/components/portfolio/AppHeader';
-import { NavigationListener } from '@/components/NavigationListener';
 import { VerticalMarquee } from '@/components/client/VerticalMarquee';
 import { ScrollbarClasses } from '@/constants/common';
 import { Icon } from '@iconify/react';
@@ -43,8 +42,6 @@ export default function RootLayout({
     >
       <body className="min-h-dvh flex flex-col">
         <div className="h-dvh w-screen overflow-hidden flex flex-col">
-          <NavigationListener />
-
           <AppHeader />
           <div
             className={`flex flex-col flex-1 h-screen w-screen overflow-hidden bg-brand-primary font-mono ${jetBrainsMono.variable}`}
