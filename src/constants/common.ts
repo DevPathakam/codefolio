@@ -1,6 +1,6 @@
 import { Duration } from "@/types/app.types";
 
-export const TotalExperienceYears: Duration = {
+export const TotalExperience: Duration = {
   years: 9,
   months: 0
 }

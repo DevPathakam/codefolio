@@ -19,6 +19,7 @@ export default async function SkillsPage() {
                   key={`skill-${idx}`}
                   tags={skill.tags}
                   usingSince={skill.usingSince}
+                  lastUsed={skill.lastUsed}
                 />
               </div>
             ),

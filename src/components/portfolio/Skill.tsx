@@ -10,6 +10,7 @@ export interface SkillProps {
   category?: SkillCategory[];
   tags?: string[];
   usingSince?: ReadableDuration;
+  lastUsed?: ReadableDuration;
 }
 export const Skill = ({
   icon,
@@ -17,7 +18,8 @@ export const Skill = ({
   category,
   tags,
   usingSince,
-}: SkillProps) => {
+  lastUsed,
+}: SkillProps) => {  
   return (
     <div className="flex gap-2 p-3" style={{ borderColor: '#ffc600' }}>
       {icon && (
@@ -43,7 +45,7 @@ export const Skill = ({
             <small>
               <NpmPill
                 label="experience"
-                value={calculateExperience(usingSince)}
+                value={calculateExperience(usingSince, lastUsed)}
                 valueClasses="bg-sky-800"
               />
             </small>

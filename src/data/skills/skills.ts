@@ -163,6 +163,8 @@ export const Skills: Skill[] = [
     icon: 'devicon:angularjs',
     visible: true,
     category: SkillCategories.AngularJS,
+    usingSince: { month: 'Feb', year: 2017 },
+    lastUsed: { month: 'Apr',year: 2018 },
   },
   {
     name: 'Angular',
@@ -170,6 +172,8 @@ export const Skills: Skill[] = [
     icon: 'devicon:angular',
     visible: true,
     category: SkillCategories.Angular,
+    usingSince: { month: 'Jun', year: 2018 },
+    lastUsed: { month: 'May',year: 2021 },
   },
   {
     name: 'Python',
@@ -178,6 +182,7 @@ export const Skills: Skill[] = [
     visible: true,
     isFeatured: true,
     category: SkillCategories.Python,
+    usingSince: { month: 'May', year: 2024 },
   },
   {
     name: 'SQL',
@@ -192,6 +197,8 @@ export const Skills: Skill[] = [
     icon: 'devicon:mongodb',
     visible: true,
     category: SkillCategories.MongoDB,
+    usingSince: { month: 'Jan', year: 2019 },
+    lastUsed: { month: 'Dec',year: 2020 },
   },
   {
     name: 'HTML',

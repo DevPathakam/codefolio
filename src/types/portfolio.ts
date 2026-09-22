@@ -12,17 +12,21 @@ export type Skill = SkillProps & {
   isFeatured?: boolean;
 };
 
+export type SkillByProficiency = {
+  high: string[];
+  mid: string[];
+  initial: string[];
+};
 export type SkillMetadata = {
-    counts: {
-        total: number,
-        [key: string]: number
-    },
-    experience: {
-        high:  string[],
-        mid: string[],
-        initial: string[]
-    }
-}
+  counts: {
+    total: number;
+    highProficiency: number;
+    midProficiency: number;
+    initialProficiency: number;
+    [key: string]: number;
+  };
+  proficiency: SkillByProficiency;
+};
 
 export type FakeFile = {
   href: string;

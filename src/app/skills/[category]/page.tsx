@@ -1,11 +1,13 @@
-import { DummyEditor } from '@/components/client/portfolio/DummyEditor';
+import { CodeBox } from '@/components/client/CodeBox';
+import { MetaData } from '@/components/client/MetaData';
 import { Skill } from '@/components/portfolio/Skill';
-import { TotalExperienceYears } from '@/constants/common';
+import { TotalExperience } from '@/constants/common';
 import { Skills } from '@/data/skills/skills';
 import {
   Skill as SkillType,
   SkillCategory,
   SkillMetadata,
+  SkillByProficiency,
 } from '@/types/portfolio';
 import { getDuration } from '@/utils/datTimeHelper';
 
@@ -19,44 +21,62 @@ export default async function SkillByCategoryPage({
   params,
 }: SkillByCategoryPageProps) {
   const { category } = await params;
-  const skillsByCategory = Skills.filter((skill) =>
-    skill.category?.includes(category as SkillCategory),
+  const skillsByCategory = Skills.filter(
+    (skill) =>
+      skill.visible && skill.category?.includes(category as SkillCategory),
   );
+
+  const segregateSkillsByProficiency = (skills: SkillType[]) => {
+    const segregatedSkills: SkillByProficiency = {
+      high: [],
+      mid: [],
+      initial: [],
+    };
+
+    skills.forEach((skill) => {
+      if (skill.usingSince) {
+        const skillDuration = getDuration(skill.usingSince);
+
+        const totalExpMonths =
+          (TotalExperience.years || 0) * 12 + (TotalExperience.months || 0);
+        const skillMonths =
+          (skillDuration.years || 0) * 12 + (skillDuration.months || 0);
+
+        const highThresholdMonths = Math.max(0, totalExpMonths - 48);
+        const initialThresholdMonths = 12;
+
+        if (skillMonths <= initialThresholdMonths) {
+          segregatedSkills.initial.push(skill.name);
+        } else if (skillMonths >= highThresholdMonths) {
+          segregatedSkills.high.push(skill.name);
+        } else {
+          segregatedSkills.mid.push(skill.name);
+        }
+      }
+    });
+
+    return segregatedSkills;
+  };
 
   const getSkillMetadata = (
     categorizedSkills: SkillType[],
   ): SkillMetadata[] => {
     const total = categorizedSkills.length;
-    const highExperienced = categorizedSkills
-      .filter((skill) => {
-        if (skill.usingSince) {
-          const skillDuration = getDuration(skill.usingSince);
-          console.log(
-            `Skill ${skill.name} experience: ${JSON.stringify(skillDuration)}`,
-          );
-          if (skillDuration.years >= TotalExperienceYears.years) {
-            return skill;
-          }
-        }
-      })
-      .map((filteredSkill) => filteredSkill.name);
-    const midExperienced = ['nodejs', 'express', 'python'];
-    const initialExperienced = ['nextjs', 'zustand', 'motion'];
-    const aa = [
+    const segregatedSkills = segregateSkillsByProficiency(categorizedSkills);
+
+    const metadata: SkillMetadata[] = [
       {
+        proficiency: segregatedSkills,
         counts: {
           total: total,
-        },
-        experience: {
-          high: highExperienced,
-          mid: midExperienced,
-          initial: initialExperienced,
+          highProficiency: segregatedSkills.high.length,
+          midProficiency: segregatedSkills.mid.length,
+          initialProficiency: segregatedSkills.initial.length,
         },
       },
     ];
 
-    console.log('AAAAAAA ==> ', aa);
-    return aa;
+    return metadata;
   };
 
   return (
@@ -75,14 +95,26 @@ export default async function SkillByCategoryPage({
                   key={`skill-${idx}`}
                   tags={skill.tags}
                   usingSince={skill.usingSince}
+                  lastUsed={skill.lastUsed}
+                  category={skill.category}
                 />
               </div>
             ),
         )}
       </div>
 
-      <div className="md:mx-20">
-        <DummyEditor<SkillMetadata> data={getSkillMetadata(skillsByCategory)} />
+      <div className="md:mx-10 lg:grid lg:grid-cols-2 gap-8 flex flex-col">
+        <CodeBox
+          category={category as SkillCategory}
+          data={skillsByCategory.map((skill) => ({
+            name: skill.name,
+            category: skill.category,
+            tags: skill.tags,
+            usingSince: skill.usingSince,
+            lastUsed: skill.lastUsed,
+          }))}
+        />
+        <MetaData metadata={getSkillMetadata(skillsByCategory)[0]} />
       </div>
     </section>
   );

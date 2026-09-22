@@ -1,12 +1,17 @@
 import { Duration, ReadableDuration } from '@/types/app.types';
 import moment from 'moment';
 
-export const getDuration = (monthYearObj: ReadableDuration): Duration => {
+export const getDuration = (
+  usingSince: ReadableDuration,
+  lastUsed?: ReadableDuration,
+): Duration => {
   const startDate = moment(
-    `${monthYearObj.month} ${monthYearObj.year}`,
+    `${usingSince.month} ${usingSince.year}`,
     'MMM YYYY',
   );
-  const endDate = moment();
+  const endDate = lastUsed
+    ? moment(`${lastUsed.month} ${lastUsed.year}`, 'MMM YYYY')
+    : moment();
 
   const totalMonths = endDate.diff(startDate, 'months');
   const duration = moment.duration(totalMonths, 'months');
@@ -24,7 +29,10 @@ export const formatDuration = (duration: Duration): string => {
   return `${yearStr}, ${monthStr}`;
 };
 
-export const calculateExperience = (monthYearObj: ReadableDuration): string => {
-  const duration = getDuration(monthYearObj);
+export const calculateExperience = (
+  usingSince: ReadableDuration,
+  lastUsed?: ReadableDuration,
+): string => {
+  const duration = getDuration(usingSince, lastUsed);
   return formatDuration(duration);
 };
