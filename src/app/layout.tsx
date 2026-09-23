@@ -47,7 +47,7 @@ export default function RootLayout({
             className={`flex flex-col flex-1 h-screen w-screen overflow-hidden bg-brand-primary font-mono ${jetBrainsMono.variable}`}
           >
             <div className="flex flex-1 min-h-0 w-full overflow-hidden">
-              <aside className="relative z-30 block bg-brand-primary-dark border-r border-r-brand-border">
+              <aside className="relative z-30 hidden md:block bg-brand-primary-dark border-r border-r-brand-border">
                 <VerticalMarquee className="px-3 flex flex-col gap-6  ">
                   {Skills.map(
                     (skill, idx) =>
