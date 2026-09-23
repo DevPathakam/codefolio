@@ -11,6 +11,7 @@ export interface SkillProps {
   tags?: string[];
   usingSince?: ReadableDuration;
   lastUsed?: ReadableDuration;
+  isFeatured?: boolean;
 }
 export const Skill = ({
   icon,
@@ -19,9 +20,10 @@ export const Skill = ({
   tags,
   usingSince,
   lastUsed,
+  isFeatured,
 }: SkillProps) => {  
   return (
-    <div className="flex gap-2 p-3" style={{ borderColor: '#ffc600' }}>
+    <div className="flex gap-2 p-3 border-brand-secondary">
       {icon && (
         <span className="pt-1 text-2xl">
           <Icon icon={icon} />
@@ -57,6 +59,16 @@ export const Skill = ({
                 label="tags"
                 value={tags.toString()}
                 valueClasses="bg-orange-800"
+              />
+            </small>
+          )}
+
+          {isFeatured && (
+            <small>
+              <NpmPill
+                label="isFeatured"
+                value="yes"
+                valueClasses="bg-amber-300 text-black"
               />
             </small>
           )}
