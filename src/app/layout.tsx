@@ -2,13 +2,12 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { AppHeader } from '@/components/portfolio/AppHeader';
-import { VerticalMarquee } from '@/components/client/VerticalMarquee';
 import { ScrollbarClasses } from '@/constants/common';
-import { Icon } from '@iconify/react';
 import { Explorer } from '@/components/portfolio/Explorer';
 import { Tabbar } from '@/components/portfolio/Tabbar';
 import { AppFooter } from '@/components/portfolio/AppFooter';
 import { Skills } from '@/data/skills/skills';
+import { SkillTooltip } from '@/components/client/SkillTooltip';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -47,19 +46,18 @@ export default function RootLayout({
             className={`flex flex-col flex-1 h-screen w-screen overflow-hidden bg-brand-primary font-mono ${jetBrainsMono.variable}`}
           >
             <div className="flex flex-1 min-h-0 w-full overflow-hidden">
-              <aside className="hidden md:block bg-brand-primary-dark border-r border-r-brand-border">
-                <VerticalMarquee className="px-3 flex flex-col gap-6  ">
+              <aside className="relative z-30 hidden md:block bg-brand-primary-dark border-r border-r-brand-border">
+                <div className="p-3 flex flex-col gap-6  ">
                   {Skills.map(
                     (skill, idx) =>
                       skill.isFeatured && (
-                        <Icon
+                        <SkillTooltip
                           key={`sidebar-skill-${idx}`}
-                          icon={skill.icon ?? ''}
-                          className="text-3xl"
+                          skill={skill}
                         />
                       ),
                   )}
-                </VerticalMarquee>
+                </div>
               </aside>
 
               <Explorer />

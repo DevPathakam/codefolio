@@ -1,3 +1,4 @@
+import { SkillTooltip } from '@/components/client/SkillTooltip';
 import { NpmPill } from '@/components/portfolio/NpmPill';
 import { Projects } from '@/data/projects/projects';
 import { Icon } from '@iconify/react';
@@ -62,24 +63,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <p>{selectedProject.highlight}</p>
             </div>
           )}
-
           {/* Tech stack */}
           <div className="border border-brand-border rounded-xl flex flex-wrap gap-4 md:gap-9 my-5 p-3 text-3xl w-fit shadow-2xl bg-brand-primary-deep-dark">
             {selectedProject.techStack.length > 0 &&
               selectedProject.techStack.map((tech, idx) => (
-                <p
-                  key={`project-tech-${idx}`}
-                  className="flex flex-col items-center"
-                >
-                  {tech.icon && (
-                    <span>
-                      <Icon icon={tech.icon} />
-                    </span>
-                  )}
-                </p>
+                <SkillTooltip key={`project-skill-${idx}`} skill={tech} />
               ))}
           </div>
-
           {/* Project Points */}
           <div className="px-5 my-5 font-jetbrains-mono">
             <ul className="list-disc">

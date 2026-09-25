@@ -1,6 +1,7 @@
 'use client';
 
 import { usePortfolioStore } from '@/stores/portfolioStore';
+import { getFileExtension } from '@/utils/commonHelper';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 
@@ -18,7 +19,7 @@ export const RecentlyOpened = () => {
                 className="flex hover:text-blue-100 hover:underline"
               >
                 <span className="mr-2">
-                  {file.fileName}.{file.type === 'JSON' ? 'json' : 'md'}
+                  {file.fileName}.{getFileExtension(file.type)}
                 </span>
                 <span className="text-brand-border">~{file.href}</span>
               </Link>
@@ -27,9 +28,9 @@ export const RecentlyOpened = () => {
         </ul>
       ) : (
         <div>
-          <p className="text-brand-border">No files visited recently.</p>
+          <p className="text-brand-border italic">No files visited so far.</p>
           <p className="text-brand-border text-sm flex">
-            Click <Icon icon="ph:sidebar-simple-fill" className="m-1" /> to
+            Click <Icon icon="ph:sidebar-simple-fill" className="m-1" /> (Top - Right) to
             explore.
           </p>
         </div>

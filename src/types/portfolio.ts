@@ -1,7 +1,7 @@
 import { SkillProps } from '@/components/portfolio/Skill';
 import { SocialLinkProps } from '@/components/portfolio/SocialLink';
 import { CategoryValues } from '@/data/skills/skillCategories';
-import { MonthAndYear } from './app.types';
+import { ReadableDuration } from './app.types';
 
 export type SocialLink = SocialLinkProps & { name: string; visible: boolean };
 
@@ -10,6 +10,22 @@ export type Skill = SkillProps & {
   alias: string;
   visible: boolean;
   isFeatured?: boolean;
+};
+
+export type SkillByProficiency = {
+  high: string[];
+  mid: string[];
+  initial: string[];
+};
+export type SkillMetadata = {
+  counts: {
+    total: number;
+    highProficiency: number;
+    midProficiency: number;
+    initialProficiency: number;
+    [key: string]: number;
+  };
+  proficiency: SkillByProficiency;
 };
 
 export type FakeFile = {
@@ -23,8 +39,8 @@ export type FakeFile = {
 export type Company = {
   name: string;
   alias: string;
-  workFrom: MonthAndYear;
-  workTo?: MonthAndYear;
+  workFrom: ReadableDuration;
+  workTo?: ReadableDuration;
   isCurrent?: boolean;
   location: string;
   roles: string[];
@@ -43,8 +59,8 @@ export type Project = {
   liveUrl?: string;
   isVisible: boolean;
   isOngoing?: boolean;
-  startedOn?: MonthAndYear;
-  endOn?: MonthAndYear;
+  startedOn?: ReadableDuration;
+  endOn?: ReadableDuration;
 };
 export type Achievement = {
   name: string;
@@ -55,4 +71,4 @@ export type Achievement = {
 };
 
 export type FakeFileBelongsTo = 'skills' | 'projects' | 'root';
-export type FakeFileType = 'Markdown' | 'JSON' | 'PDF' | 'TSX';
+export type FakeFileType = 'Markdown' | 'JSON' | 'PDF' | 'TSX' | 'HTML';

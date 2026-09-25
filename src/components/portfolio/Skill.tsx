@@ -1,33 +1,79 @@
 import { SkillCategory } from '@/types/portfolio';
 import { Icon } from '@iconify/react';
+import { ReadableDuration } from '@/types/app.types';
+import { NpmPill } from './NpmPill';
+import { calculateExperience } from '@/utils/datTimeHelper';
 
 export interface SkillProps {
   icon?: string;
   name: string;
-  category: SkillCategory[];
+  category?: SkillCategory[];
   tags?: string[];
+  usingSince?: ReadableDuration;
+  lastUsed?: ReadableDuration;
+  isFeatured?: boolean;
 }
-export const Skill = ({ icon, name, tags }: SkillProps) => {
+export const Skill = ({
+  icon,
+  name,
+  category,
+  tags,
+  usingSince,
+  lastUsed,
+  isFeatured,
+}: SkillProps) => {  
   return (
-    <div
-      className="flex gap-2 border-2 border-dashed p-3 rounded-2xl"
-      style={{ borderColor: '#ffc600' }}
-    >
+    <div className="flex gap-2 p-3 border-brand-secondary">
       {icon && (
         <span className="pt-1 text-2xl">
           <Icon icon={icon} />
         </span>
       )}
-      <span className="text-2xl">{name}</span>
-      {tags?.length &&
-        tags.map((tag, idx) => (
-          <span
-            key={`skill-tag-${idx}`}
-            className="border px-2 py-1 rounded-4xl"
-          >
-            {tag}
-          </span>
-        ))}
+      <div className="flex flex-col bg-">
+        <div className="text-2xl">{name}</div>
+
+        <div className="flex flex-wrap gap-2">
+          {category && (
+            <small>
+              <NpmPill
+                label="categories"
+                value={category.toString()}
+                valueClasses="bg-green-800"
+              />
+            </small>
+          )}
+
+          {usingSince && (
+            <small>
+              <NpmPill
+                label="experience"
+                value={calculateExperience(usingSince, lastUsed)}
+                valueClasses="bg-sky-800"
+              />
+            </small>
+          )}
+
+          {tags?.length && (
+            <small>
+              <NpmPill
+                label="tags"
+                value={tags.toString()}
+                valueClasses="bg-orange-800"
+              />
+            </small>
+          )}
+
+          {isFeatured && (
+            <small>
+              <NpmPill
+                label="isFeatured"
+                value="yes"
+                valueClasses="bg-amber-300 text-black"
+              />
+            </small>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
