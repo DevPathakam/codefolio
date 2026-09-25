@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { AppHeader } from '@/components/portfolio/AppHeader';
-import { VerticalMarquee } from '@/components/client/VerticalMarquee';
 import { ScrollbarClasses } from '@/constants/common';
 import { Explorer } from '@/components/portfolio/Explorer';
 import { Tabbar } from '@/components/portfolio/Tabbar';
@@ -48,7 +47,7 @@ export default function RootLayout({
           >
             <div className="flex flex-1 min-h-0 w-full overflow-hidden">
               <aside className="relative z-30 hidden md:block bg-brand-primary-dark border-r border-r-brand-border">
-                <VerticalMarquee className="px-3 flex flex-col gap-6  ">
+                <div className="p-3 flex flex-col gap-6  ">
                   {Skills.map(
                     (skill, idx) =>
                       skill.isFeatured && (
@@ -58,7 +57,7 @@ export default function RootLayout({
                         />
                       ),
                   )}
-                </VerticalMarquee>
+                </div>
               </aside>
 
               <Explorer />
