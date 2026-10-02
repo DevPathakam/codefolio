@@ -24,8 +24,8 @@ export const Explorer = () => {
     const list: FakeFile[] = [
       {
         href: `/skills/`,
-        fileName: 'all',
-        type: 'JSON',
+        fileName: 'allSkills',
+        type: 'HTML',
         isActive: false,
         belongsTo: 'skills',
       },
@@ -34,7 +34,7 @@ export const Explorer = () => {
           ({
             href: `/skills/${category}`,
             fileName: category,
-            type: 'JSON',
+            type: 'TSX',
             belongsTo: 'skills',
             isActive: false,
           }) as FakeFile,
@@ -48,7 +48,7 @@ export const Explorer = () => {
     const list: FakeFile[] = [
       {
         href: `/projects/`,
-        fileName: 'all',
+        fileName: 'allProjects',
         type: 'Markdown',
         belongsTo: 'projects',
         isActive: false,
@@ -78,7 +78,7 @@ export const Explorer = () => {
     {
       href: `/`,
       fileName: 'hello_user',
-      type: 'TSX',
+      type: 'HTML',
       belongsTo: 'root',
       isActive: false,
     },

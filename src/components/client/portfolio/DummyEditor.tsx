@@ -41,14 +41,14 @@ export function DummyEditor<T>({ data, schema }: DummyEditorProps<T>) {
         {lines.map((ln, idx) => (
           <div
             key={`code-line-number${idx + 1}`}
-            className="bg-[#163042] px-6 select-none h-fit text-right w-18"
+            className="bg-brand-primary-deep-dark px-6 select-none h-fit text-right w-18"
           >
             <span>{idx + 1}</span>
           </div>
         ))}
       </div>
 
-      <div className="flex-1 overflow-x-auto w-full whitespace-nowrap">
+      <div className="flex-1 overflow-x-auto w-full whitespace-nowrap bg-gray-900">
         {lines.map((ln, lnIdx) => (
           <div
             key={`code-line-${lnIdx}`}

@@ -1,3 +1,4 @@
+import { Badge } from '@/components/Badge';
 import { Projects } from '@/data/projects/projects';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
@@ -21,10 +22,12 @@ export default function ProjectsPage() {
                   <div className="mb-2 flex justify-between">
                     <span className="text-xl font-bold">{project.name}</span>
                     {project.isPersonal && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-brand-primary-deep-dark border border-brand-border text-white text-xs font-medium h-6">
-                        <span className="w-2 h-2 rounded-full bg-[#ff5a60]" />
-                        Personal
-                      </span>
+                      <Badge additionalClasses='bg-brand-primary-deep-dark border border-brand-border text-white'>
+                        <>
+                          <span className="w-2 h-2 rounded-full bg-[#ff5a60]" />
+                          Personal
+                        </>
+                      </Badge>
                     )}
                   </div>
                   {project.company && (

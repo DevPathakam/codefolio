@@ -1,4 +1,5 @@
 import { Companies } from '@/data/companies/companies';
+import { Projects } from '@/data/projects/projects';
 import { Skills } from '@/data/skills/skills';
 import { Line, LineOptions } from '@/types/dummyEditor';
 
@@ -10,6 +11,10 @@ export function getTechStack(stackSkills: string[]) {
 
 export function findCompanyByAlias(companyAlias: string) {
   return Companies.find((company) => company.alias === companyAlias);
+}
+
+export function findProjectByAlias(projectAlias: string) {
+  return Projects.find((proj) => proj.alias === projectAlias);
 }
 
 export function createRenderLines<T>(
