@@ -230,6 +230,14 @@ export const Skills: Skill[] = [
     category: SkillCategories.ApacheAirflow,
   },
   {
+    name: 'Cloudflare Pages',
+    alias: 'cloudflare',
+    icon: 'thesvg-color:cloudflare-pages',
+    visible: true,
+    isFeatured: false,
+    category: SkillCategories.CloudflarePages,
+  },
+  {
     name: 'Docker',
     alias: 'docker',
     icon: 'devicon:docker',

@@ -42,6 +42,7 @@ export const SkillCategories: { [key: string]: SkillCategory[] } = {
   CSS: ['frontend', 'stylesheets'],
   SCSS: ['frontend', 'stylesheets'],
   ApacheAirflow: ['tools', 'backend', 'devops'],
+  CloudflarePages: ['tools', 'devops'],
   Docker: ['tools', 'devops'],
   GithubActions: ['tools', 'devops'],
   Git: ['tools'],

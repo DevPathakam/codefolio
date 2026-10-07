@@ -14,5 +14,5 @@ export const ProjectTechStack = {
     'kanban',
   ],
   SysGenie: ['react', 'flow', 'tailwind', 'node', 'express', 'lm'],
-  Codefolio: ['react', 'next', 'tailwind', 'zustand', 'motion'],
+  Codefolio: ['react', 'next', 'tailwind', 'zustand', 'motion', 'cloudflare'],
 };

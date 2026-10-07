@@ -24,4 +24,14 @@ export const ProjectPoints = {
     'Audited and overhauled frontend applications to drastically elevate core performance metrics, successfully reducing Largest Contentful Paint (LCP), First Contentful Paint (FCP), and Cumulative Layout Shift (CLS)',
     'Actively led rigorous code reviews and engineering initiatives that successfully elevated application scores to 90% for Accessibility and 90% for Development Best Practices.',
   ],
+  SysGenie: [
+    'Engineered a backend middleware that utilizes a localized LLM (Gemma 4) via LM Studio APIs to analyze user prompts, acting as an evaluation agent to validate and route system design requests and response to frontend in a structured nodes and edges JSON format.',
+    'Frontend renders an architectural system design from the response by designing a graph via React Flow',
+  ],
+  CodeFolio: [
+    'Built a VS Code-inspired portfolio using Next.js, React, and Tailwind CSS, creating a responsive web app that organizes 3 core sections (i.e. projects, skills, and resume) into an interactive developer experience.',
+    'Designed and implemented a state-driven file explorer and tabbed navigation system with React and Zustand, improving browsing efficiency',
+    'Developed reusable UI components and motion-enhanced interactions, resulting in a polished front-end experience with improved visual consistency and a more engaging user journey.',
+    'Deployed the portfolio to production on Cloudflare, delivering a fast, scalable frontend experience while showcasing technical expertise and maintaining a 100% self-hosted personal brand presence.',
+  ],
 };
